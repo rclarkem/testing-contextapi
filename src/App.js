@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import MovieList from './MovieList'
+import Nav from './Nav'
+import { MovieProvider } from './MovieListContext'
+import AddMovie from './AddMovie'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className='App'>
+			<MovieProvider>
+				<Nav />
+				<MovieList />
+				<AddMovie />
+			</MovieProvider>
+		</div>
+	)
 }
 
-export default App;
+export default App
